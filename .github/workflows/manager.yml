@@ -73,7 +73,7 @@ jobs:
         run: |
           set -eux
           remote="https://git.zako.shirkneko.top:20004"
-          mirror="/ci/repo-cache/${GITHUB_REPOSITORY}.git"
+          mirror="${RUNNER_TEMP}/repo-cache/${GITHUB_REPOSITORY}.git"
           mkdir -p "$(dirname "$mirror")"
           # One bare mirror per repository lives on the runner host, shared by
           # every job through the /ci volume. Re-downloading the whole history
@@ -337,7 +337,7 @@ jobs:
         run: |
           set -eux
           remote="https://git.zako.shirkneko.top:20004"
-          mirror="/ci/repo-cache/${GITHUB_REPOSITORY}.git"
+          mirror="${RUNNER_TEMP}/repo-cache/${GITHUB_REPOSITORY}.git"
           mkdir -p "$(dirname "$mirror")"
           # One bare mirror per repository lives on the runner host, shared by
           # every job through the /ci volume. Re-downloading the whole history
