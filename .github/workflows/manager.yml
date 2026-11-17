@@ -205,7 +205,7 @@ jobs:
           rand_alpha() {
             openssl rand -base64 48 | tr -dc 'a-z' | cut -c1-"$1"
           }
-          KSUD_LIB="lib$(rand_alpha 10).so"
+          KSUD_LIB="libksud.so"
           CORE_LIB="$(rand_alpha 11)"
           APP_CLASS="$(rand_alpha 11)"
           PRELOAD_CLASS="$(rand_alpha 11)"
